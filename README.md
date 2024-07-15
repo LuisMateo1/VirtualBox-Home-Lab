@@ -33,4 +33,25 @@ Now I can create a snapshot of the current state of this VM and return to it if 
 ![Screenshot 2024-07-15 114848](https://github.com/user-attachments/assets/85d37e24-69e5-4788-b5b0-5436b5592564)
 
 
-To isolate the VM's I need to create a DHCP server on the host machine whice will asign IP address to the VM's
+To isolate the VMs I need to create a DHCP server on VirtualBox which will assign IP addresses to the VMs
+To do this I first go to the directory VirtualBox is installed on
+
+![Screenshot 2024-07-15 124407](https://github.com/user-attachments/assets/56134dd0-a4c2-460e-a9eb-54b6be56351f)
+
+Then I listed the current DHCP servers to make sure I dont try to create one that already exists
+
+![Screenshot 2024-07-15 124704](https://github.com/user-attachments/assets/c3b4e905-f0bf-481b-a99d-e09a45776e5d)
+
+Now enter all the settings for the DHCP server and list one more time to confirm its creation
+![Screenshot 2024-07-15 125434](https://github.com/user-attachments/assets/85b55d5d-5890-4259-94a2-5083e0cba923)
+
+I need to change the adapter settings for both VMs
+
+![Screenshot 2024-07-15 123538](https://github.com/user-attachments/assets/85996206-fbed-4159-918c-820be927ae8d)
+
+To confirm the DHCP server assigned this VM an IP I do 'ifconfig', then I pinged the vulnerable machine, assuring they can communicate. Lastly, to make sure that it's isolated from the internet I pinged Google's DNS server and got no response confirming there is no internet access
+
+![Screenshot 2024-07-15 131930](https://github.com/user-attachments/assets/b4cd39d1-8fed-4dab-975f-f9c83b6fb8c5)
+
+And that is all, both machines can communicate with each other and are isolated from the internet.
+
