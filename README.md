@@ -1,4 +1,4 @@
-# VBox-Home-Lab
+# VirtualBox Home Lab
 
 <h>Creating a Home Lab using VirtualBox</h>
 
